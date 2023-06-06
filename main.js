@@ -3,6 +3,8 @@
 const btn = document.getElementById('reset');
 const container = document.getElementById('drawpad');
 
+/* creation of the grin */
+
 function gridCreate(num) {
     container.style.gridTemplateColumns = 'repeat('+num+', 1fr)'; 
     container.style.gridTemplateRows = 'repeat('+num+', 1fr)';
@@ -15,6 +17,10 @@ function gridCreate(num) {
     defineListeners();
 }
 
+gridCreate(16);
+
+/* event listener for the colour change */
+
 function defineListeners() {
     const box = document.getElementsByClassName('box');
     for (const element of box) {
@@ -22,17 +28,19 @@ function defineListeners() {
             let farbe1 = Math.floor(Math.random() * 255)
             let farbe2 = Math.floor(Math.random() * 255)
             let farbe3 = Math.floor(Math.random() * 255)
-            console.log('mouseover')
+            //console.log('mouseover')
             element.style.backgroundColor = `rgb(${farbe1},${farbe2},${farbe3})`;
         })
     }
 }
 
-gridCreate(16);
+/* clearing the grid */
 
 function clear() {
     container.innerHTML = "";
 }
+
+/* start/reset button */
 
 btn.addEventListener('click', () => {
     clear();
