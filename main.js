@@ -11,11 +11,10 @@ function gridCreate() {
         element.classList.add('box');
     }
     defineListeners();
-
 }
+
 function defineListeners() {
     const box = document.getElementsByClassName('box');
-    console.log(box);
     for (const element of box) {
         let farbe1 = Math.floor(Math.random() * 255) 
         let farbe2 = Math.floor(Math.random() * 255) 
@@ -27,3 +26,10 @@ function defineListeners() {
 }
 
 gridCreate();
+
+btn.addEventListener('click', () => {
+    const box = document.getElementsByClassName('box');
+    for (const element of box) {
+        element.style.backgroundColor = 'rgb(255,255,255)';
+    }
+})
