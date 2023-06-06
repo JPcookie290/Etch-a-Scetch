@@ -28,6 +28,7 @@ function defineListeners() {
     }
 }
 
+gridCreate(16);
 
 function clear() {
     container.innerHTML = "";
